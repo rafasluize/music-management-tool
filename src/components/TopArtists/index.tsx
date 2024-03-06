@@ -7,7 +7,7 @@ import * as Styled from './styles';
 import { Skeleton } from 'components/Skeleton/styled';
 
 const TopArtists: FC = () => {
-  const { data: topArtists, isFetched, isError, isFetching } = useTopArtists();
+  const { data: topArtists, isFetched, isFetching } = useTopArtists();
 
   return (
     <Card title="Top 5" sideHeader="Highest rate">
