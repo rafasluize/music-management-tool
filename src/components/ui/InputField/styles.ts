@@ -2,30 +2,22 @@ import { ErrorMessage } from 'formik';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-margin-bottom: ${({ theme }) => theme.spacing.km4};
+  margin-bottom: ${({ theme }) => theme.spacing.km4};
 
-   > label {
+  > label {
     display: block;
-  font-size: ${({ theme }) => theme.font.size.m3};
-  margin-bottom: ${({ theme }) => theme.spacing.km1};
-
-
-
-   }
-
-   > input {
-    width: 100%;
-  height: 30px;
-
-  &:focus {
-    outline: ${({ theme }) => theme.border.width.thinner} solid ${({ theme }) => theme.color.text.brand.default};
-
+    font-size: ${({ theme }) => theme.font.size.m3};
+    margin-bottom: ${({ theme }) => theme.spacing.km1};
   }
 
+  > input {
+    width: 100%;
+    height: 30px;
 
-s
-
-   }
+    &:focus {
+      outline: ${({ theme }) => theme.border.width.thinner} solid ${({ theme }) => theme.color.text.brand.default};
+    }
+  }
 `;
 
 const ErrorMessageCustom = styled(ErrorMessage)`

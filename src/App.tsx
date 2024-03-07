@@ -1,9 +1,9 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import Header from './components/Header';
+import Header from './components/ui/Header';
 import theme from './styles/theme';
 import GlobalStyle from './styles/global.styles';
-import Footer from './components/Footer';
+import Footer from './components/ui/Footer';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';

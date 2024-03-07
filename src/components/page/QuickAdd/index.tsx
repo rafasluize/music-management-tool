@@ -1,9 +1,9 @@
-import InputField from 'components/InputField';
-import Card from '../Card';
+import InputField from 'components/ui/InputField';
 import React, { FC } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import { Button } from 'components/Button/styles';
+import { Button } from 'components/ui/Button/styles';
+import Card from 'components/ui/Card';
 
 const QuickAddSchema = Yup.object().shape({
   artistName: Yup.string().required('Please input the artist name'),

@@ -1,10 +1,10 @@
-import Card from '../Card';
 import React, { FC } from 'react';
-import { useTopArtists } from '../../services/artists';
-import { IDataTopArtists } from '../../services/artists/types';
 
 import * as Styled from './styles';
-import { Skeleton } from 'components/Skeleton/styled';
+import { Skeleton } from 'components/ui/Skeleton/styled';
+import { useTopArtists } from 'services/artists';
+import { IDataTopArtists } from 'services/artists/types';
+import Card from 'components/ui/Card';
 
 const TopArtists: FC = () => {
   const { data: topArtists, isFetched, isFetching } = useTopArtists();

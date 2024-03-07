@@ -1,1 +1,2 @@
-export * from './get';
+export * from './top';
+export * from './fav';

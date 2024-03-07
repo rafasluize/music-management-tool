@@ -52,7 +52,7 @@ export const theme: DefaultTheme = {
       secondary: {
         default: '#6c2c83',
         weakest: '#fff4f4',
-        weak: '#ffd6d6',
+        weak: '#F8EEF7',
         medium: '#ff4e4c',
         strong: '#b21919',
       },
@@ -76,7 +76,7 @@ export const theme: DefaultTheme = {
     },
     text: {
       brand: {
-        default: '#dd2a62',
+        default: '#BD07F0',
         strong: '#b21919',
       },
 

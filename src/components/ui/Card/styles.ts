@@ -22,6 +22,7 @@ const Header = styled.div`
     font-weight: 700;
     font-size: ${({ theme }) => theme.font.size.m2};
     color: ${({ theme }) => theme.color.text.neutral.strong};
+    line-height: 2.5;
   }
 `;
 
