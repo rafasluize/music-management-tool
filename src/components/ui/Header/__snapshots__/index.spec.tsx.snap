@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+
+exports[`header snapshot 1`] = `
+.c0 {
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  background-color: #dd2a62;
+  background: linear-gradient(     90deg,     #dd2a62 0%,     #6c2c83 91%   );
+}
+
+.c0 h1 {
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
+.c1 {
+  margin-left: auto;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.c1::after {
+  content: 'RL';
+  background-color: #ffffff;
+  color: #111111;
+  font-weight: 700;
+  padding: 12px;
+  margin-left: 12px;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+}
+
+<header
+  class="c0"
+>
+  <h1>
+    Music Management Tools
+  </h1>
+  <div
+    class="c1"
+    letter="RL"
+  >
+    Rafaela Luiz
+  </div>
+</header>
+`;

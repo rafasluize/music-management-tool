@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`card snapshot 1`] = `
+.c0 {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 6px 14px -6px rgba(38, 47, 74, 0.12),0px 10px 32px -4px rgba(24, 38, 47, 0.1);
+}
+
+.c1 {
+  border-bottom: 1px solid #dddfe4;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #6c2c83;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.c1 div {
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #111111;
+  line-height: 2.5;
+}
+
+.c2 {
+  padding: 16px;
+}
+
+<section
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    title here
+  </div>
+  <div
+    class="c2"
+  >
+    text
+  </div>
+</section>
+`;

@@ -26,11 +26,14 @@ const QuickAdd: FC = () => {
       >
         {({ errors, touched }) => (
           <Form>
-            <InputField name="artistName" label="Artist Name" type="input" />
+            <InputField name="artistName" label="Artist Name" type="text" />
 
-            <InputField name="video" label="Favorite music video (Youtube)" type="input" />
+            <InputField name="video" label="Favorite music video (Youtube)" type="text" />
 
-            <Button variant="brand"> Add</Button>
+            <Button variant="brand" type="submit" role="button">
+              {' '}
+              Add
+            </Button>
           </Form>
         )}
       </Formik>

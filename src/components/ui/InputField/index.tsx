@@ -9,7 +9,7 @@ const InputField: FC<IInput> = ({ label, name, type }) => {
   return (
     <Styled.Wrapper>
       {label && <label htmlFor={name}>{label}</label>}
-      <Field id={name} type={type} name={name} onChange={handleChange(name)} />
+      <Field id={name} type={type} name={name} onChange={handleChange(name)} data-testid={`test-${name}`} />
 
       <Styled.ErrorMessageCustom className="error" name={name} component="div" />
     </Styled.Wrapper>
