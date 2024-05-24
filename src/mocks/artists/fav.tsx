@@ -1,6 +1,6 @@
 import { HttpResponse, http } from 'msw';
 
-const allPosts = new Map()
+const allPosts = new Map();
 
 const data = {
   data: [
@@ -243,35 +243,30 @@ const data = {
       image: 'https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png',
     },
   ],
-}
-
+};
 
 const favArtists = [
-  http.get(`http://localhost/fav`, () =>
-    HttpResponse.json(data),
-  ),
-
-
+  http.get(`http://localhost/fav`, () => HttpResponse.json(data)),
 
   http.delete('http://localhost/fav/:id', ({ params }) => {
     // All request path params are provided in the "params"
     // argument of the response resolver.
-    const { id } = params
- 
+    const { id } = params;
+
     // Let's attempt to grab the post by its ID.
-    const deletedPost = allPosts.get(id)
- 
+    const deletedPost = allPosts.get(id);
+
     // Respond with a "404 Not Found" response if the given
     // post ID does not exist.
     if (!deletedPost) {
-      return new HttpResponse(null, { status: 404 })
+      return new HttpResponse(null, { status: 404 });
     }
- 
+
     // Delete the post from the "allPosts" map.
-    allPosts.delete(id)
- 
+    allPosts.delete(id);
+
     // Respond with a "200 OK" response and the deleted post.
-    return HttpResponse.json(deletedPost)
+    return HttpResponse.json(deletedPost);
   }),
 ];
 

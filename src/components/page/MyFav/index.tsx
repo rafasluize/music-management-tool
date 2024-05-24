@@ -25,7 +25,6 @@ const Myfav: FC = () => {
 
   const { mutate } = useDeleteArtistById();
 
-
   const handleSort = (a: IDataTopArtists, b: IDataTopArtists) => {
     if (order === 'desc') {
       if (a[field] < b[field]) {
