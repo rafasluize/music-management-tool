@@ -9,6 +9,8 @@ import InputSearch from 'components/ui/InputSearch';
 import { useFavArtists } from 'services/artists';
 import { IDataTopArtists } from 'services/artists/types';
 import { FaSort } from 'react-icons/fa6';
+import { useNavigate } from 'react-router-dom';
+import { MdOutlineDelete, MdOutlineEdit } from 'react-icons/md';
 
 const Myfav: FC = () => {
   const [search, setSearch] = useState('');
@@ -17,6 +19,8 @@ const Myfav: FC = () => {
   const [order, setOrder] = useState<'asc' | 'desc'>('desc');
 
   const { data: favArtists, isFetched, isFetching } = useFavArtists();
+
+  const navigate = useNavigate();
 
   const handleSort = (a: IDataTopArtists, b: IDataTopArtists) => {
     if (order === 'desc') {
@@ -30,8 +34,6 @@ const Myfav: FC = () => {
     }
 
     if (order === 'asc') {
-      console.log('entrou');
-
       return a[field] < b[field] ? 1 : a[field] > b[field] ? -1 : 0;
     }
 
@@ -51,7 +53,9 @@ const Myfav: FC = () => {
     const target = event.target as HTMLInputElement;
     setSearch(target.value);
   };
-  const handleAdd = () => {};
+  const handleAdd = () => {
+    navigate('create');
+  };
 
   return (
     <Card
@@ -89,7 +93,15 @@ const Myfav: FC = () => {
                   <div>{item.name}</div>
 
                   <div>{item.rate}</div>
-                  <div></div>
+                  <Styled.Buttons>
+                    <Button variant="neutral" onClick={() => navigate(`edit/${item.id}`)}>
+                      <MdOutlineEdit />
+                    </Button>
+
+                    <Button variant="neutral">
+                      <MdOutlineDelete />
+                    </Button>
+                  </Styled.Buttons>
                 </Styled.Item>
               ))}
 

@@ -1,6 +1,6 @@
-import { favArtists, topArtists } from './artists';
+import { favArtists, saveArtist, topArtists } from './artists';
 
-const handlers = [...topArtists, ...favArtists];
+const handlers = [...topArtists, ...favArtists, ...saveArtist];
 const testHandlers = [...handlers];
 
 export { testHandlers, handlers };

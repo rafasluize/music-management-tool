@@ -10,9 +10,13 @@ const Button = styled.button<{ variant: 'neutral' | 'brand' }>`
         ${theme.color.background.secondary.default} 91%
       );
     `
-      : `${theme.color.background.neutral.inverted};`};
+      : `${theme.color.background.neutral.weakest};`};
 
-  color: white;
+  color: ${({ theme, variant }) =>
+    variant === 'brand'
+      ? `white
+    `
+      : `${theme.color.text.neutral.strong};`};
   padding: 5px 15px;
   border-radius: 5px;
   outline: 0;

@@ -58,4 +58,9 @@ const Item = styled.div`
   }
 `;
 
-export { Wrapper, Item, Thead, Content };
+const Buttons = styled.div`
+  display: flex;
+  gap: 16px;
+`;
+
+export { Wrapper, Item, Thead, Content, Buttons };

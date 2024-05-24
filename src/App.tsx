@@ -7,6 +7,7 @@ import Footer from './components/ui/Footer';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import FormArtist from 'pages/FormArtist';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -25,6 +26,8 @@ const App = () => (
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/create" element={<FormArtist />} />
+        <Route path="/edit/:id" element={<FormArtist />} />
       </Routes>
       <Footer />
     </ThemeProvider>
