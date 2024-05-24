@@ -61,6 +61,7 @@ const Item = styled.div`
 const Buttons = styled.div`
   display: flex;
   gap: 16px;
+  justify-content: end;
 `;
 
 export { Wrapper, Item, Thead, Content, Buttons };

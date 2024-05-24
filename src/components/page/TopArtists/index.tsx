@@ -17,7 +17,7 @@ const TopArtists: FC = () => {
             <Styled.Item key={item.name}>
               <span>{item.name}</span>
 
-              <span>{item.rate}</span>
+              <span>{item.rating}</span>
             </Styled.Item>
           ))}
         </Styled.Wrapper>

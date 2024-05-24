@@ -1,6 +1,6 @@
 export const defaultServiceConfig = {
   withCredentials: true,
-  timeout: 60000,
+  timeout: 600000,
   headers: {
     'content-Type': 'application/json',
     Accept: '/',

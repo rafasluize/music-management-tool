@@ -11,16 +11,20 @@ import { IDataTopArtists } from 'services/artists/types';
 import { FaSort } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
 import { MdOutlineDelete, MdOutlineEdit } from 'react-icons/md';
+import { useDeleteArtistById } from 'services/artists/delete';
 
 const Myfav: FC = () => {
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState(false);
-  const [field, setField] = useState<'name' | 'rate'>('name');
+  const [field, setField] = useState<'name' | 'rating'>('name');
   const [order, setOrder] = useState<'asc' | 'desc'>('desc');
 
   const { data: favArtists, isFetched, isFetching } = useFavArtists();
 
   const navigate = useNavigate();
+
+  const { mutate } = useDeleteArtistById();
+
 
   const handleSort = (a: IDataTopArtists, b: IDataTopArtists) => {
     if (order === 'desc') {
@@ -40,7 +44,7 @@ const Myfav: FC = () => {
     return 0;
   };
 
-  const applySort = (type: 'name' | 'rate') => {
+  const applySort = (type: 'name' | 'rating') => {
     setField(type);
     setSort(true);
 
@@ -57,6 +61,10 @@ const Myfav: FC = () => {
     navigate('create');
   };
 
+  const handleDelete = (id: number) => {
+    mutate(id);
+  };
+
   return (
     <Card
       title="My artists"
@@ -69,12 +77,12 @@ const Myfav: FC = () => {
       <InputSearch name="search" label="Search" type="input" onChange={handleSearch} />
 
       <Styled.Wrapper>
-        <Styled.Thead>
+        <Styled.Thead data-testid="thead">
           <div onClick={() => applySort('name')}>
             Name
             <FaSort size="0.8rem" color="#636b7e" />
           </div>
-          <div onClick={() => applySort('rate')}>
+          <div onClick={() => applySort('rating')}>
             Rating
             <FaSort size="0.8rem" color="#636b7e" />
           </div>
@@ -92,20 +100,20 @@ const Myfav: FC = () => {
                 <Styled.Item key={item.name}>
                   <div>{item.name}</div>
 
-                  <div>{item.rate}</div>
+                  <div>{item.rating}</div>
                   <Styled.Buttons>
                     <Button variant="neutral" onClick={() => navigate(`edit/${item.id}`)}>
                       <MdOutlineEdit />
                     </Button>
 
-                    <Button variant="neutral">
+                    <Button variant="neutral" onClick={() => handleDelete(item.id)}>
                       <MdOutlineDelete />
                     </Button>
                   </Styled.Buttons>
                 </Styled.Item>
               ))}
 
-          {isFetching && <Skeleton height="500px" margin={'20px'} />}
+          {isFetching && <Skeleton height="500px" margin={'20px'} data-testid="skeleton" />}
         </Styled.Content>
       </Styled.Wrapper>
     </Card>

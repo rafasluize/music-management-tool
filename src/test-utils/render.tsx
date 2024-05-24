@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { render, RenderOptions } from '@testing-library/react';
 import theme from 'styles/theme';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import {  BrowserRouter } from 'react-router-dom';
 
 const ThemeDS: FC<{ children: ReactNode }> = ({ children }) => <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 
@@ -26,7 +27,15 @@ const queryRender = (
 ) =>
   render(
     <Suspense fallback={<p>Carregando</p>}>
-      <QueryClientProvider client={queryClient}>{component}</QueryClientProvider>
+      
+      <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+      
+        {component}
+      </BrowserRouter>
+
+        
+        </QueryClientProvider>
     </Suspense>,
     { wrapper: ThemeDS, ...options },
   );

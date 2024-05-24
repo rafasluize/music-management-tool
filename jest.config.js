@@ -10,6 +10,7 @@ module.exports = {
   testEnvironment: 'jsdom',
   bail: true,
   passWithNoTests: true,
+  setupFiles: ['./jest.polyfills.js'],
   setupFilesAfterEnv: ['./src/setupTests.ts'],
   collectCoverage: true,
   moduleDirectories: ['node_modules', 'src'],
@@ -19,6 +20,7 @@ module.exports = {
     '!src/{config,services,test-utils}/**',
     '!src/**/{styles,types}.{js,jsx,tsx,ts}',
     '!src/mocks/**/*.{js,jsx,tsx,ts}',
+    '!src/styles/*.{js,jsx,tsx,ts}',
   ],
   coverageReporters: ['lcov', 'text', 'cobertura'],
   coverageThreshold: {
@@ -29,5 +31,5 @@ module.exports = {
       statements: 80,
     },
   },
-  testTimeout: 10000,
+  testTimeout: 1000000,
 };

@@ -2,10 +2,10 @@ import { UseMutationOptions, useMutation } from '@tanstack/react-query';
 import apiService from '../../config/service';
 
 interface PayloadSaveArtist {
-  artistName: string;
-  video: string;
+  name: string;
+  video?: string;
   rating: number;
-  image: string;
+  image?: string;
 }
 
 const saveArtist = async (payload: PayloadSaveArtist) => {
