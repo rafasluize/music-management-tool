@@ -23,7 +23,7 @@ const TopArtists: FC = () => {
         </Styled.Wrapper>
       )}
 
-      {isFetching && <Skeleton height="374px" />}
+      {isFetching && <Skeleton height="374px" data-testid="skeleton" />}
     </Card>
   );
 };
